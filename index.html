@@ -173,6 +173,100 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 .fade-in.visible{opacity:1;transform:none}
 @media(max-width:960px){.skl{grid-template-columns:1fr}.sgrid{grid-template-columns:repeat(2,1fr)}nav{padding:0 1.5rem}.nav-links{display:none}.banner{padding:10px 1.5rem}}
 @media(max-width:600px){section{padding:4rem 0}.container{padding:0 1.25rem}.hphoto{width:160px;height:160px}.sg{grid-template-columns:1fr}}
+@media print{
+*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;color-adjust:exact!important}
+body{background:#fff!important;color:#1a1a1a!important;font-size:10px!important;line-height:1.45!important}
+nav,.banner,#contact,.btn-dl,.etog,.pring,.pring2,.hbg,.hgrid,.fade-in:not(.visible),.havail,.bdot{display:none!important}
+.fade-in{opacity:1!important;transform:none!important}
+section{padding:1.5rem 0!important}
+.container{max-width:100%!important;padding:0 0.75rem!important}
+#hero{min-height:auto!important;padding-top:0.5rem!important}
+.hinner{gap:1.5rem!important}
+.hphoto{width:100px!important;height:100px!important}
+.hwrap{display:none!important}
+.hname{font-size:28px!important;color:#1a1a1a!important}
+.hname .ac{color:#1e3a8a!important}
+.hrole{font-size:11px!important;color:#444!important;border-left:2px solid #1e3a8a!important}
+.hsum{font-size:10px!important;color:#333!important;line-height:1.5!important;margin-bottom:0.75rem!important;max-width:100%!important}
+.cpill{background:#f0f0f0!important;border:1px solid #ccc!important;color:#333!important;font-size:9px!important;padding:3px 8px!important}
+.ht{font-size:9px!important;padding:2px 8px!important}
+.ht-g{background:#eef!important;color:#1e3a8a!important;border-color:#1e3a8a!important}
+.ht-b{background:#f0f4ff!important;color:#2563eb!important;border-color:#2563eb!important}
+.ht-d{background:#f5f5f5!important;color:#666!important}
+.sstrip{background:#f8f8f8!important;border-color:#ddd!important}
+.sgrid{grid-template-columns:repeat(4,1fr)!important}
+.si{padding:0.75rem!important}
+.snum{font-size:24px!important;color:#1e3a8a!important}
+.snum.bl{color:#2563eb!important}
+.slb,.ssub{color:#555!important}
+.stitle{font-size:22px!important;color:#1a1a1a!important;margin-bottom:1rem!important}
+.stitle span{color:#1e3a8a!important}
+.slbl{color:#1e3a8a!important}
+.grule{background:#1e3a8a!important}
+.spanel{display:block!important}
+.stabs{display:none!important}
+.dc,.cc,.sc,.tgp,.certc,.edc,.pc,.ec{background:#fafafa!important;border:1px solid #ddd!important;page-break-inside:avoid}
+.dc.hi,.dc.ai-hi{background:#f0f4ff!important;border-color:#cce!important}
+.dnm{color:#1e3a8a!important}
+.dico{background:#eef!important;border-color:#cce!important;color:#1e3a8a!important}
+.dico.gold{background:#fdf6e3!important;border-color:#d4b96a!important;color:#8b6914!important}
+.chip{font-size:8px!important;padding:2px 6px!important}
+.ce{background:#fdf6e3!important;color:#8b6914!important;border-color:#d4b96a!important}
+.ca{background:#f0f4ff!important;color:#1e3a8a!important;border-color:#2563eb!important}
+.ci{background:#f5f5f5!important;color:#666!important}
+.cc canvas{display:none!important}
+.cct{color:#1e3a8a!important}
+.skl{grid-template-columns:1fr!important}
+.tgl{color:#1e3a8a!important}
+.tt{font-size:8px!important;padding:2px 6px!important;background:#f5f5f5!important;border-color:#ddd!important;color:#333!important}
+.tline .tspine{background:#1e3a8a!important}
+.tdot{background:#1e3a8a!important;border-color:#fff!important;box-shadow:0 0 0 2px #1e3a8a!important}
+.tdot.sm{background:#f5f5f5!important;border-color:#2563eb!important;box-shadow:0 0 0 2px #2563eb!important}
+.etb{background:#1e3a8a!important}
+.er{font-size:16px!important;color:#1a1a1a!important}
+.ed{color:#1e3a8a!important;background:#eef!important;border-color:#cce!important}
+.eco{color:#2563eb!important}
+.elo{color:#555!important}
+.edesc{border-left:2px solid #2563eb!important;color:#444!important;font-size:10px!important}
+.ebul li{font-size:10px!important;color:#333!important;line-height:1.5!important}
+.ebul li strong{color:#1a1a1a!important}
+.ebul li::before{color:#1e3a8a!important}
+.ehl{background:#eef!important;border-color:#cce!important;color:#1e3a8a!important;font-size:9px!important}
+.ebody{display:block!important}
+.pgrid{grid-template-columns:1fr 1fr!important}
+.pc{page-break-inside:avoid}
+.pc::before{background:#1e3a8a!important}
+.pnum{color:rgba(30,58,138,0.1)!important;font-size:32px!important}
+.ptit{color:#1a1a1a!important;font-size:14px!important}
+.pco{color:#2563eb!important}
+.pdesc{color:#333!important;font-size:10px!important}
+.pimp{color:#1e3a8a!important;border-left:2px solid #1e3a8a!important;font-size:10px!important}
+.egrid{grid-template-columns:1fr 1fr 1fr!important}
+.edc.top::after{color:#1e3a8a!important;background:#eef!important;border-color:#cce!important}
+.eyr{color:#1e3a8a!important}
+.edeg{color:#1a1a1a!important;font-size:13px!important}
+.esch{color:#555!important;font-size:11px!important}
+.egpa{background:#eef!important;border-color:#cce!important;color:#1e3a8a!important}
+.certg{grid-template-columns:1fr 1fr!important}
+.certb{background:#eef!important;border-color:#cce!important;color:#1e3a8a!important}
+.certn{color:#1a1a1a!important;font-size:11px!important}
+.certi{color:#555!important;font-size:10px!important}
+footer{border-top:1px solid #ddd!important;padding:1rem 0!important}
+footer::before{background:#1e3a8a!important}
+.fn{color:#1e3a8a!important;font-size:20px!important}
+.fl{color:#333!important}
+.sct{color:#1a1a1a!important}
+.scd{color:#444!important}
+.lr{background:#f8f8f8!important;border-color:#ddd!important}
+.ln{color:#1a1a1a!important}
+.ll{color:#1e3a8a!important}
+.dot.f{background:#1e3a8a!important}
+.dot.e{background:#ddd!important;border-color:#ccc!important}
+.pbadge{display:none!important}
+a{color:#333!important;text-decoration:none!important}
+.hcontacts{margin-bottom:0.5rem!important}
+.htags{margin-bottom:0!important}
+}
 </style>
 </head>
 <body>
@@ -184,10 +278,11 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="btn-dl" onclick="dlResume()">
-    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-    Download Resume
+  <button class="btn-dl" onclick="exportProfile()">
+    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h5v7h7v9H6z"/></svg>
+    Export Profile
   </button>
 </nav>
 <div class="banner">
@@ -215,9 +310,9 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   <p class="hrole">Financial Services Professional &nbsp;|&nbsp; Capital Markets &nbsp;|&nbsp; Risk &amp; Compliance &nbsp;|&nbsp; Process Automation</p>
   <p class="hsum">Results-driven Financial Services professional with 3.5+ years at TD Bank Canada &mdash; a Tier-1 North American banking environment. Specializing in capital markets operations, operational risk controls (1LOD), KYC/AML compliance, MIS reporting automation, and AI-assisted workflow solutions. Bridging Operations, Compliance, and Technology to deliver measurable impact.</p>
   <div class="hcontacts">
-    <a href="mailto:rahul.khare997@gmail.com" class="cpill"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>rahul.khare997@gmail.com</a>
+    <a href="/cdn-cgi/l/email-protection#fd8f9c958891d396959c8f98c4c4cabd9a909c9491d39e9290" class="cpill"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span class="__cf_email__" data-cfemail="f280939a879edc999a938097cbcbc5b2959f939b9edc919d9f">[email&#160;protected]</span></a>
     <a href="https://linkedin.com/in/rahulkhare997" target="_blank" class="cpill"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>LinkedIn</a>
-    <a href="tel:+919890555475" class="cpill"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>+91 98905 55475</a>
+    <a href="https://github.com/rahulkhare997" target="_blank" class="cpill"><svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
     <span class="cpill"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Noida, India</span>
   </div>
   <div class="htags">
@@ -267,7 +362,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       <div class="dc">
         <div class="dir"><div class="dico">&#9878;</div><div class="dnm">Risk &amp; Compliance</div></div>
         <div class="dchips">
-          <span class="chip ce">Operational Risk (1LOD)</span><span class="chip ce">KYC / AML Due Diligence</span><span class="chip ce">Root Cause Analysis</span><span class="chip ce">Audit Documentation</span><span class="chip ca">SEC / CIRO Regulation</span><span class="chip ca">Transaction Surveillance</span>
+          <span class="chip ce">Operational Risk (1LOD)</span><span class="chip ce">KYC / AML Due Diligence</span><span class="chip ce">Root Cause Analysis</span><span class="chip ce">Audit Documentation</span><span class="chip ca">SEC / CIRO Regulation</span><span class="chip ca">Transaction Surveillance</span><span class="chip ca">FATCA Compliance</span>
         </div>
       </div>
       <div class="cl"><span class="chip ce">Expert</span><span class="chip ca">Advanced</span><span class="chip ci">Intermediate</span></div>
@@ -282,7 +377,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       <div class="dc">
         <div class="dir"><div class="dico">&#128421;</div><div class="dnm">Platforms &amp; Systems</div></div>
         <div class="dchips">
-          <span class="chip ce">Bloomberg Terminal</span><span class="chip ce">Kyndryl ISM (TD)</span><span class="chip ce">FundServ</span><span class="chip ca">Croesus Advisor</span><span class="chip ca">SAP NetWeaver ERP</span><span class="chip ca">Salesforce CRM</span><span class="chip ca">Morningstar Direct</span><span class="chip ci">Jira (Agile)</span>
+          <span class="chip ce">Bloomberg Terminal</span><span class="chip ce">Kyndryl ISM (TD)</span><span class="chip ce">FundServ</span><span class="chip ca">Croesus Advisor</span><span class="chip ca">SAP NetWeaver ERP</span><span class="chip ca">Salesforce CRM</span><span class="chip ca">Morningstar Direct</span><span class="chip ca">Basic SQL</span><span class="chip ci">Tableau</span><span class="chip ci">Jira (Agile)</span>
         </div>
       </div>
       <div class="dc ai-hi">
@@ -329,7 +424,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   <div class="grule"></div>
   <p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;font-weight:600">Technologies &amp; Platforms</p>
   <div class="tg">
-    <div class="tgp"><div class="tgl">Data &amp; Reporting</div><span class="tt">Excel VBA</span><span class="tt">Power Query</span><span class="tt">VLOOKUP/XLOOKUP</span><span class="tt">Power BI</span><span class="tt">PowerPoint</span></div>
+    <div class="tgp"><div class="tgl">Data &amp; Reporting</div><span class="tt">Excel VBA</span><span class="tt">Power Query</span><span class="tt">VLOOKUP/XLOOKUP</span><span class="tt">Power BI</span><span class="tt">Basic SQL</span><span class="tt">Tableau</span><span class="tt">PowerPoint</span></div>
     <div class="tgp"><div class="tgl">Banking &amp; CRM</div><span class="tt">Kyndryl ISM</span><span class="tt">FundServ</span><span class="tt">Croesus Advisor</span><span class="tt">Salesforce</span><span class="tt">SAP NetWeaver</span></div>
     <div class="tgp"><div class="tgl">Market Data</div><span class="tt">Bloomberg Terminal</span><span class="tt">Morningstar Direct</span></div>
     <div class="tgp"><div class="tgl">Project &amp; Collaboration</div><span class="tt">Jira (Agile)</span><span class="tt">MS Teams</span><span class="tt">SharePoint</span><span class="tt">Outlook</span></div>
@@ -361,9 +456,12 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
         <li><strong>Regulatory Compliance (KYC/AML):</strong> Executed enhanced KYC/AML reviews, transaction surveillance, and compliance checks aligned to SEC and CIRO requirements; maintained audit-ready documentation.</li>
         <li><strong>Process Automation &amp; MIS:</strong> Built automated MIS dashboards (Excel VBA + Power Query) consolidating 60+ data sources &mdash; reducing manual reporting effort by ~25% and improving leadership visibility.</li>
         <li><strong>Platform Migration &amp; UAT:</strong> Core business liaison during TD's platform migration (Thinkorswim &rarr; Active Trader); translated user feedback into IT/PMO requirements and supported UAT activities.</li>
+        <li><strong>Account Lifecycle &amp; FATCA Compliance:</strong> Managed end-to-end account opening and closing for Canadian and U.S. clients; verified KYC/AML documentation and reviewed FATCA forms ensuring regulatory completeness per SEC and CIRO requirements.</li>
+        <li><strong>Training &amp; Knowledge Transfer:</strong> Designed and delivered structured training decks covering reconciliation workflows, compliance procedures, and the T+1 settlement transition for recurring team sessions of 10&ndash;12 analysts.</li>
+        <li><strong>Escalation &amp; Leadership Call Management:</strong> Participated in 3+ structured three-way calls daily with TD leadership and clients to resolve escalated reconciliation breaks, margin breaches, and compensation claims &mdash; serving as subject matter expert presenting root cause and resolution options.</li>
         <li><strong>HNI Client Advisory:</strong> Identified HNI clients suitable for TD Private Investment Advice (PIA) and managed structured migration &mdash; achieving ~60% conversion rate.</li>
       </ul>
-      <div class="ehi"><span class="ehl">&#8595; 25% manual effort</span><span class="ehl">$15M+ AUM monitored</span><span class="ehl">60% HNI conversion</span><span class="ehl">60+ data sources unified</span></div>
+      <div class="ehi"><span class="ehl">&#8595; 25% manual effort</span><span class="ehl">$15M+ AUM monitored</span><span class="ehl">60% HNI conversion</span><span class="ehl">60+ data sources unified</span><span class="ehl">T+1 transition training</span><span class="ehl">~60% exceptions resolved solo</span></div>
     </div>
   </div>
 </div>
@@ -407,7 +505,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 <div class="slbl fade-in">Academics</div>
 <h2 class="stitle fade-in"><span>Education</span> &amp; Certifications</h2>
 <div class="egrid fade-in">
-  <div class="edc top"><div class="eyr">2020 &middot; Honours</div><div class="edeg">Post-Graduate Certificate &mdash; Financial Technology (FinTech)</div><div class="esch">Seneca College, Toronto, Canada</div><div class="egpa">GPA 3.9 / 4.0</div></div>
+  <div class="edc top"><div class="eyr">2020 &middot; Honours</div><div class="edeg">Post-Graduate Certificate &mdash; Financial Technology (FinTech)</div><div class="esch">Seneca College, Toronto, Canada</div><div class="egpa">GPA 4.0 / 4.0</div></div>
   <div class="edc"><div class="eyr">2019 &middot; Honours</div><div class="edeg">Post-Graduate Certificate &mdash; Financial Services</div><div class="esch">Algonquin College, Ottawa, Canada</div><div class="egpa">GPA 3.8 / 4.0</div></div>
   <div class="edc"><div class="eyr">2018</div><div class="edeg">BBA (Hons.) &mdash; Finance &amp; Management</div><div class="esch">Bharati Vidyapeeth University, Pune, India</div><div class="egpa">CGPA 7.5 / 10</div></div>
 </div>
@@ -426,21 +524,42 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 </div>
 </section>
 
+<section id="contact">
+<div class="container">
+<div class="slbl fade-in">Get in Touch</div>
+<h2 class="stitle fade-in">Contact <span>Me</span></h2>
+<div class="fade-in" style="max-width:680px">
+  <p style="font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:2rem">Interested in discussing a role or collaboration? Fill out the form below and I'll get back to you promptly.</p>
+  <div style="background:var(--bg2);border:0.5px solid var(--border-dim);border-radius:12px;padding:2rem;text-align:center">
+    <a href="https://forms.gle/6oWQqZR59bRHZ2Nj6" target="_blank" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border-radius:8px;background:linear-gradient(135deg,var(--royal),var(--royal-mid));border:1px solid var(--gold-dim);color:var(--gold-light);font-size:14px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;cursor:pointer">
+      <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      Send Me a Message
+    </a>
+    <p style="font-size:12px;color:var(--text-dim);margin-top:1rem">Opens a secure Google Form &mdash; your details stay private</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.5rem">
+    <a href="/cdn-cgi/l/email-protection#1e6c7f766b723075767f6c7b2727295e79737f7772307d7173" style="flex:1;min-width:200px;display:flex;align-items:center;gap:10px;padding:1rem 1.25rem;background:var(--bg2);border:0.5px solid var(--border-dim);border-radius:var(--radius);text-decoration:none;color:var(--text-muted);font-size:13px;transition:border-color 0.3s"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:var(--gold);flex-shrink:0"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span class="__cf_email__" data-cfemail="1c6e7d7469703277747d6e7925252b5c7b717d7570327f7371">[email&#160;protected]</span></a>
+    <a href="https://linkedin.com/in/rahulkhare997" target="_blank" style="flex:1;min-width:200px;display:flex;align-items:center;gap:10px;padding:1rem 1.25rem;background:var(--bg2);border:0.5px solid var(--border-dim);border-radius:var(--radius);text-decoration:none;color:var(--text-muted);font-size:13px;transition:border-color 0.3s"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:var(--royal-light);flex-shrink:0"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>LinkedIn Profile</a>
+  </div>
+</div>
+</div>
+</section>
+
 <footer>
 <div class="container">
   <div class="fn">Rahul Khare</div>
   <p style="font-size:13px;color:var(--text-muted);margin-top:4px">Financial Services &middot; Capital Markets &middot; Risk &amp; Compliance &middot; AI Automation</p>
   <p style="font-size:12px;color:var(--text-dim);margin-top:6px">Noida, India &nbsp;&middot;&nbsp; Immediate Joiner &nbsp;&middot;&nbsp; Open to Relocate</p>
   <div class="flinks">
-    <a href="mailto:rahul.khare997@gmail.com" class="fl">rahul.khare997@gmail.com</a>
+    <a href="/cdn-cgi/l/email-protection#3f4d5e574a531154575e4d5a0606087f58525e5653115c5052" class="fl"><span class="__cf_email__" data-cfemail="6416050c11084a0f0c0516015d5d53240309050d084a070b09">[email&#160;protected]</span></a>
     <a href="https://linkedin.com/in/rahulkhare997" target="_blank" class="fl">LinkedIn</a>
-    <a href="tel:+919890555475" class="fl">+91 98905 55475</a>
+    <a href="https://github.com/rahulkhare997" target="_blank" class="fl">GitHub</a>
   </div>
   <p style="font-size:11px;color:var(--text-dim);margin-top:2rem">&copy; 2025 Rahul Khare &middot; Analytical Resume Dashboard</p>
 </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.08});
 document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
 const cObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting&&!x.target.dataset.done){x.target.dataset.done='1';const tgt=parseFloat(x.target.dataset.target),dec=parseInt(x.target.dataset.decimal||'0'),sfx=x.target.dataset.suffix||'';let s=0;const timer=setInterval(()=>{s++;const p=1-Math.pow(1-s/60,3);const v=tgt*p;x.target.textContent=dec>0?v.toFixed(dec)+sfx:Math.round(v)+sfx;if(s>=60){clearInterval(timer);x.target.textContent=dec>0?tgt.toFixed(dec)+sfx:tgt+sfx;}},30);}})},{threshold:0.5});
@@ -448,79 +567,15 @@ document.querySelectorAll('.count-target').forEach(el=>cObs.observe(el));
 function showTab(e,id){document.querySelectorAll('.spanel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.stab').forEach(t=>t.classList.remove('active'));document.getElementById('tab-'+id).classList.add('active');e.target.classList.add('active');}
 function toggleExp(hdr){const c=hdr.closest('.ec'),b=c.querySelector('.ebody'),t=c.querySelector('.etog'),o=b.classList.contains('open');b.classList.toggle('open',!o);b.style.display=o?'none':'block';t.classList.toggle('open',!o);}
 function toggleTog(tog){const c=tog.closest('.ec'),b=c.querySelector('.ebody'),o=b.classList.contains('open');b.classList.toggle('open',!o);b.style.display=o?'none':'block';tog.classList.toggle('open',!o);}
-function dlResume(){
-const txt=`RAHUL KHARE
-Financial Services Professional | Capital Markets | Risk & Compliance | Process Automation
-Noida, Uttar Pradesh | +91-9890555475 | rahul.khare997@gmail.com | linkedin.com/in/rahulkhare997
-Immediate Joiner | Ex-TD Bank Canada | Relocated to India | Open to Relocate
-
-PROFESSIONAL SUMMARY
-Results-driven Financial Services professional with 3.5+ years at TD Bank Canada (Tier-1 North American bank), specializing in capital markets operations, operational risk controls (1LOD), KYC/AML compliance, process automation, and AI-assisted workflow solutions. Reduced manual MIS reporting effort by ~25%. Actively targeting roles in Capital Markets Operations, Risk & Compliance Advisory, Financial Services Consulting, or Operations Strategy.
-
-CORE COMPETENCIES
-Capital Markets Operations: Trade lifecycle (equities, fixed income, derivatives, OTC/Pink Sheets, dark pool), margin monitoring, reconciliation, exception management
-Risk & Compliance: Operational risk (1LOD), KYC/AML, transaction surveillance, SEC/CIRO regulatory adherence, audit documentation
-Process Automation & Analytics: Excel VBA, Power Query, VLOOKUP/XLOOKUP, Power BI dashboards, MIS reporting, KPI design
-AI & Automation: AI dashboard creation, workflow automation, prompt engineering, agentic AI solutions, MCP integrations
-Stakeholder & Project Delivery: Cross-functional liaison (Ops/Compliance/Tech/PMO), UAT & platform migration, HNI advisory
-Business Analysis: Requirements elicitation, As-Is/To-Be mapping, Agile/Jira, RCA, SLA governance
-Financial Technology: Bloomberg Terminal, Morningstar, FundServ, Croesus Advisor, Kyndryl ISM, SAP NetWeaver, Salesforce
-
-PROFESSIONAL EXPERIENCE
-TD Bank Group -- TD Direct Investing | Toronto, Canada
-Senior Investment Representative | Licensed (CIRO / SEC)
-Oct 2021 - Feb 2025
-- Managed end-to-end trade lifecycle for 20-30 HNI accounts daily (equities, fixed income, derivatives, OTC, dark pool)
-- Primary 1LOD operational risk control; daily reconciliations, RCA, audit-trail documentation
-- Monitored CAD $15M+ AUM; proactive HNI outreach on margin, collateral, risk mitigation
-- KYC/AML reviews, transaction surveillance, SEC and CIRO compliance checks
-- Built automated MIS dashboards (Excel VBA + Power Query); consolidated 60+ data sources, -25% manual effort
-- Business liaison for Thinkorswim to Active Trader platform migration; UAT support
-- Led HNI client migration to TD PIA; ~60% conversion rate
-
-ATA Freight India Pvt. Ltd. | Pune, India
-Business Analyst Intern | Jun 2017 - Aug 2017
-- Cost-benefit and variance analysis of operational overheads
-- Managed invoicing for 100+ global clients on SAP ERP
-- Vendor coordination with DHL, FedEx for freight schedule optimization
-- Agile sprints for operational bottleneck identification
-
-KEY PROJECTS
-1. MIS Dashboard Automation (TD Bank): Excel VBA + Power Query; 60+ sources; -25% manual effort
-2. AI Resume Dashboard (2025): AI-assisted development using Claude AI, prompt engineering, MCP integrations
-3. HNI Client Migration (TD Bank): Structured program; ~60% conversion rate
-4. Platform Migration Liaison (TD Bank): Thinkorswim to Active Trader; smooth UAT and go-live
-
-CERTIFICATIONS
-- Canadian Securities Course (CSC) -- CSI
-- Conduct and Practices Handbook (CPH) -- CSI
-- Derivatives Fundamentals and Options Licensing (DFOL) -- CSI
-- Personal Financial Services Advice (PFSA) -- CSI
-- Be10X AI Tools & ChatGPT Workshop Certification
-- Anthropic AI & Workflow Automation Learning Program
-
-EDUCATION
-Post-Graduate Certificate - Financial Technology (FinTech) | 2020 | Honours | GPA 3.9/4.0
-Seneca College, Toronto, Canada
-
-Post-Graduate Certificate - Financial Services | 2019 | Honours | GPA 3.8/4.0
-Algonquin College, Ottawa, Canada
-
-BBA (Hons.) - Finance & Management | 2018 | CGPA 7.5/10
-Bharati Vidyapeeth University, Pune, India
-
-TOOLS & TECHNOLOGY
-Data: Excel VBA, Power Query, Power BI, PowerPoint
-Banking: Kyndryl ISM, FundServ, Croesus Advisor, Salesforce, SAP NetWeaver
-Market Data: Bloomberg Terminal, Morningstar Direct
-Project: Jira, MS Teams, SharePoint
-AI & Automation: TD-GPT, Copilot, Claude AI, ChatGPT, Gemini, Agentic AI, MCP, Prompt Engineering
-
-ADDITIONAL
-Work Authorization: Indian Citizen | Prior Canadian work authorization | Open to relocation
-Languages: English (Fluent), Hindi (Native)
-Notice Period: Immediate Joiner`;
-const b=new Blob([txt],{type:'text/plain'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='Rahul_Khare_Resume.txt';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u);
+function exportProfile(){
+// Expand all collapsed experience sections before printing
+document.querySelectorAll('.ebody').forEach(b=>{b.style.display='block';b.classList.add('open')});
+document.querySelectorAll('.etog').forEach(t=>t.classList.add('open'));
+// Show all tab panels for print
+document.querySelectorAll('.spanel').forEach(p=>{p.dataset.wasActive=p.classList.contains('active');p.style.display='block'});
+window.print();
+// Restore tab state after print
+setTimeout(()=>{document.querySelectorAll('.spanel').forEach(p=>{if(p.dataset.wasActive!=='true')p.style.display='';delete p.dataset.wasActive})},500);
 }
 new Chart(document.getElementById('radarChart'),{type:'radar',data:{labels:['Markets Ops','Risk Controls','KYC/AML','MIS/Excel','Stakeholder','Business Analysis','AI/Automation'],datasets:[{data:[95,90,88,92,85,80,75],backgroundColor:'rgba(191,161,74,0.08)',borderColor:'#bfa14a',borderWidth:1.5,pointBackgroundColor:'#bfa14a',pointBorderColor:'#070b14',pointBorderWidth:2,pointRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{r:{min:0,max:100,ticks:{display:false},grid:{color:'rgba(191,161,74,0.1)'},angleLines:{color:'rgba(30,58,138,0.2)'},pointLabels:{color:'#8899aa',font:{size:11,family:'Inter'}}}}}});
 new Chart(document.getElementById('donutChart'),{type:'doughnut',data:{labels:['Markets Operations','Risk & Compliance','Automation','Advisory'],datasets:[{data:[35,30,20,15],backgroundColor:['#bfa14a','#2563eb','#d4b96a','#1e3a8a'],borderColor:'#0c1220',borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,cutout:'68%',plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>` ${ctx.label}: ${ctx.parsed}%`}}}}});
