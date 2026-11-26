@@ -6,6 +6,7 @@ import { Counter } from '@/components/counter';
 import { MetricViz } from '@/components/metric-viz';
 import { Rich } from '@/components/rich';
 import { MotionGate } from '@/components/motion-gate';
+import { Masthead } from '@/components/masthead';
 import { Terminal } from '@/components/terminal';
 import { AiChat } from '@/components/ai-chat';
 import { ExperienceTabs } from '@/components/experience-tabs';
@@ -52,6 +53,7 @@ export default function Home() {
         Skip to content
       </a>
 
+      <Masthead />
       <Ticker />
 
       {/* Desktop: theme + recruiter controls pinned top-right, outside the
