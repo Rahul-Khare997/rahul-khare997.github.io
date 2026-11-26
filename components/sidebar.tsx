@@ -4,9 +4,16 @@ import { motion, useReducedMotion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { nav, profile } from '@/lib/content';
 import { ModeControls } from './chrome';
+import { NAME_FLIGHT, NAME_LAYOUT_ID, NameMark } from './masthead';
+import { useNameDocked } from './name-dock';
+import { useCalm } from './ui-mode';
 
 export function Sidebar() {
   const [active, setActive] = useState<string>(nav[0].id);
+  const docked = useNameDocked();
+  const calm = useCalm();
+  const small =
+    'block font-serif text-5xl font-normal leading-none tracking-tight text-heading';
 
   useEffect(() => {
     const sections = nav
@@ -68,12 +75,20 @@ export function Sidebar() {
           </div>
         </div>
 
-        <p
-          style={stagger(1).style}
-          className="hero-reveal font-serif text-4xl font-normal leading-none tracking-tight text-heading sm:text-5xl"
-        >
-          <em className="not-italic text-accent">Rahul</em> Khare
-        </p>
+        {/* Desktop only: the name arrives here from the masthead once it
+            scrolls away. An invisible copy keeps the slot's height fixed. */}
+        <div aria-hidden className="relative hidden lg:block">
+          <NameMark className={`${small} invisible`} />
+          {docked && (
+            <motion.span
+              layoutId={NAME_LAYOUT_ID}
+              transition={calm ? { duration: 0 } : NAME_FLIGHT}
+              className="absolute left-0 top-0 inline-block origin-top-left"
+            >
+              <NameMark className={small} />
+            </motion.span>
+          )}
+        </div>
 
         <p style={stagger(2).style} className="hero-reveal mt-3 text-lg font-medium tracking-tight text-heading">
           {profile.role}
