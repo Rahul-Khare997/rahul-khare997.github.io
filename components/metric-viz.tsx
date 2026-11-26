@@ -21,6 +21,17 @@ export function MetricViz({ viz }: { viz: MetricViz }) {
     return (
       <svg viewBox="0 0 56 56" className="h-14 w-14 -rotate-90" aria-hidden>
         <circle cx="28" cy="28" r={r} fill="none" strokeWidth="5" className="stroke-border" />
+        {/* Finished arc for print, where the draw-in never runs. */}
+        <circle
+          cx="28"
+          cy="28"
+          r={r}
+          fill="none"
+          strokeWidth="5"
+          strokeLinecap="round"
+          className="viz-static stroke-accent"
+          strokeDasharray={`${(viz.pct / 100) * 2 * Math.PI * r} ${2 * Math.PI * r}`}
+        />
         <motion.circle
           cx="28"
           cy="28"
@@ -28,7 +39,7 @@ export function MetricViz({ viz }: { viz: MetricViz }) {
           fill="none"
           strokeWidth="5"
           strokeLinecap="round"
-          className="stroke-accent"
+          className="viz-anim stroke-accent"
           initial={calm ? false : { pathLength: 0 }}
           whileInView={{ pathLength: viz.pct / 100 }}
           animate={calm ? { pathLength: viz.pct / 100 } : undefined}
@@ -50,6 +61,7 @@ export function MetricViz({ viz }: { viz: MetricViz }) {
             </span>
             <div className="relative h-2.5 rounded-sm bg-border">
               <motion.div
+                data-motion
                 className="absolute inset-y-0 left-0 origin-left rounded-sm bg-accent"
                 style={{ width: `${(r.to / max) * 100}%` }}
                 initial={calm ? false : { scaleX: r.from / r.to }}
@@ -91,6 +103,7 @@ export function MetricViz({ viz }: { viz: MetricViz }) {
           <div className="flex items-center gap-2">
             <div className="relative h-2.5 flex-1">
               <motion.div
+                data-motion
                 className="absolute inset-y-0 left-0 origin-left rounded-sm bg-accent"
                 style={{ width: pct(viz.afterLo) }}
                 initial={calm ? false : { scaleX: viz.before / viz.afterLo }}
@@ -118,6 +131,7 @@ export function MetricViz({ viz }: { viz: MetricViz }) {
     <div aria-hidden>
       <div className="relative h-2.5 rounded-sm bg-border">
         <motion.div
+          data-motion
           className="absolute inset-y-0 origin-left rounded-sm bg-accent"
           style={{ left: `${left}%`, width: `${width}%` }}
           initial={calm ? false : { scaleX: 0 }}

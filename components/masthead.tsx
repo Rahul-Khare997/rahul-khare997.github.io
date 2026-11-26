@@ -6,7 +6,6 @@ import { profile } from '@/lib/content';
 import { useDockWatcher, useNameDocked } from './name-dock';
 import { useCalm } from './ui-mode';
 
-const EASE = [0.16, 1, 0.3, 1] as const;
 export const NAME_LAYOUT_ID = 'rk-name';
 export const PHOTO_LAYOUT_ID = 'rk-photo';
 export const NAME_FLIGHT = { type: 'spring', stiffness: 170, damping: 26, mass: 0.9 } as const;
@@ -50,14 +49,6 @@ export function Masthead() {
   const slot = useRef<HTMLHeadingElement>(null);
   useDockWatcher(slot);
 
-  const rise = (i: number) =>
-    calm
-      ? {}
-      : {
-          initial: { opacity: 0, y: 18 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.6, delay: 0.05 + i * 0.08, ease: EASE },
-        };
   const big =
     'block font-serif text-[clamp(3.4rem,11vw,9.5rem)] font-normal leading-[0.9] tracking-tight text-heading';
 
@@ -65,15 +56,19 @@ export function Masthead() {
     <header className="relative overflow-hidden border-b border-border">
       <div aria-hidden className="bold-glow pointer-events-none absolute inset-0" />
       <div className="relative mx-auto max-w-[1560px] px-6 pb-8 pt-16 md:px-12 md:pb-10 md:pt-24 lg:pl-10 lg:pr-12 xl:pl-16 xl:pr-20">
-        <motion.div
-          {...rise(0)}
-          data-motion
-          className="font-mono text-[11px] uppercase tracking-[0.24em] text-accent"
+        {/* CSS entrance, not Motion: the name must show even if the JS bundle
+            never runs (same rule as the sidebar identity block). */}
+        <div
+          className="hero-reveal font-mono text-[11px] uppercase tracking-[0.24em] text-accent"
+          style={{ animationDelay: '40ms' }}
         >
           {profile.role}
-        </motion.div>
+        </div>
 
-        <motion.div {...rise(1)} data-motion className="relative mt-6 flex items-center gap-5 md:gap-8">
+        <div
+          className="hero-reveal relative mt-6 flex items-center gap-5 md:gap-8"
+          style={{ animationDelay: '120ms' }}
+        >
           {/* Portrait: flies to the sidebar with the name. The box keeps its size. */}
           <div
             role="img"
@@ -104,7 +99,7 @@ export function Masthead() {
               </motion.span>
             )}
           </h1>
-        </motion.div>
+        </div>
       </div>
     </header>
   );

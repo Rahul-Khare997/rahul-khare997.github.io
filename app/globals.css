@@ -426,3 +426,21 @@ html:not(.js) [data-motion] {
 .recruiter .bold-glow {
   display: none;
 }
+
+/* Metric arc: the animated stroke prints at whatever frame it reached, so
+   print swaps in the finished static arc. */
+.viz-static {
+  display: none;
+}
+@media print {
+  .viz-static {
+    display: inline;
+  }
+  .viz-anim {
+    display: none;
+  }
+  [data-motion] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

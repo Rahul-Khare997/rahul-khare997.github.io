@@ -1,6 +1,7 @@
 'use client';
 
-import { motion, useReducedMotion } from 'motion/react';
+import { motion } from 'motion/react';
+import { useReducedMotionSafe } from './ui-mode';
 import { useRef, useState } from 'react';
 import type { Role } from '@/lib/content';
 import { Logo } from './logo';
@@ -17,7 +18,7 @@ import { Rich } from './rich';
  */
 export function ExperienceTabs({ role }: { role: Role }) {
   const [active, setActive] = useState(role.tracks[0].id);
-  const reduced = useReducedMotion();
+  const reduced = useReducedMotionSafe();
   const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({});
 
   const track = role.tracks.find((t) => t.id === active) ?? role.tracks[0];
@@ -80,7 +81,7 @@ export function ExperienceTabs({ role }: { role: Role }) {
               id={`tab-${role.id}-${t.id}`}
               role="tab"
               aria-selected={on}
-              aria-controls={`panel-${role.id}-${t.id}`}
+              aria-controls={on ? `panel-${role.id}-${t.id}` : undefined}
               tabIndex={on ? 0 : -1}
               onClick={() => setActive(t.id)}
               className={[

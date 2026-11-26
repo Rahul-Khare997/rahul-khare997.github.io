@@ -1,7 +1,6 @@
 'use client';
 
 import { useSyncExternalStore } from 'react';
-import { useReducedMotion } from 'motion/react';
 
 /**
  * Theme and recruiter mode live as classes on <html>, set pre-paint by the
@@ -9,7 +8,7 @@ import { useReducedMotion } from 'motion/react';
  *
  * This is a module-level store rather than per-component state: several
  * components read the same flags (the controls, the recruiter bar, the
- * preloader), and independent useState copies would drift — toggling in one
+ * name dock), and independent useState copies would drift — toggling in one
  * would never notify the others.
  */
 type Snapshot = { light: boolean; recruiter: boolean };
@@ -83,6 +82,26 @@ export function useUiMode() {
  */
 export function useCalm() {
   const { recruiter } = useUiMode();
-  const reduced = useReducedMotion();
-  return recruiter || !!reduced;
+  const reduced = useReducedMotionSafe();
+  return recruiter || reduced;
+}
+
+const RM_QUERY = '(prefers-reduced-motion: reduce)';
+
+/**
+ * The OS reduced-motion preference, hydration-safe: the server and the first
+ * client render both see `false`, then it updates. Motion's own hook reads
+ * the real value on the first client render, which makes the client's markup
+ * differ from the server's and React throws a hydration error.
+ */
+export function useReducedMotionSafe() {
+  return useSyncExternalStore(
+    (cb) => {
+      const mq = window.matchMedia(RM_QUERY);
+      mq.addEventListener('change', cb);
+      return () => mq.removeEventListener('change', cb);
+    },
+    () => window.matchMedia(RM_QUERY).matches,
+    () => false,
+  );
 }

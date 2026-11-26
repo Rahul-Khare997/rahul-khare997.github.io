@@ -1,6 +1,7 @@
 'use client';
 
-import { motion, useReducedMotion } from 'motion/react';
+import { motion } from 'motion/react';
+import { useReducedMotionSafe } from './ui-mode';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 
 /**
@@ -105,7 +106,7 @@ export function AiChat() {
   const inputRef = useRef<HTMLInputElement>(null);
   const launcherRef = useRef<HTMLButtonElement>(null);
   const openedOnce = useRef(false);
-  const reduced = useReducedMotion();
+  const reduced = useReducedMotionSafe();
 
   // Restore the session's conversation once, client-side only.
   useEffect(() => {

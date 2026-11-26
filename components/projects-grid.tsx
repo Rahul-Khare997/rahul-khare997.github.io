@@ -49,7 +49,10 @@ export function ProjectsGrid() {
         })}
       </div>
 
-      <motion.ol layout={!calm} className="grid gap-4 sm:grid-cols-2" aria-live="polite">
+      <p role="status" className="sr-only">
+        Showing {shown.length} of {projects.length} projects
+      </p>
+      <motion.ol layout={!calm} className="grid gap-4 sm:grid-cols-2">
         <AnimatePresence mode="popLayout" initial={false}>
           {shown.map((p) => (
             <motion.li

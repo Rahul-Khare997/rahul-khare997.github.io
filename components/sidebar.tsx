@@ -1,12 +1,12 @@
 'use client';
 
-import { motion, useReducedMotion } from 'motion/react';
+import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { nav, profile } from '@/lib/content';
 import { ModeControls } from './chrome';
 import { NAME_FLIGHT, NAME_LAYOUT_ID, NameMark, PHOTO_LAYOUT_ID, PhotoMark } from './masthead';
 import { useNameDocked } from './name-dock';
-import { useCalm } from './ui-mode';
+import { useCalm, useReducedMotionSafe } from './ui-mode';
 
 export function Sidebar() {
   const [active, setActive] = useState<string>(nav[0].id);
@@ -45,7 +45,7 @@ export function Sidebar() {
   });
 
   return (
-    <header className="no-scrollbar lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[34%] lg:flex-col lg:justify-between lg:overflow-y-auto lg:pb-8 lg:pt-10">
+    <aside aria-label="Profile summary" className="no-scrollbar lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[34%] lg:flex-col lg:justify-between lg:overflow-y-auto lg:pb-8 lg:pt-10">
       {/* max-h-screen + sticky means anything that doesn't fit the viewport
           is unreachable — it never scrolls into view. Rhythm below is sized
           to fit ~800px-tall laptops; overflow-y-auto is the fallback so the
@@ -174,14 +174,14 @@ export function Sidebar() {
           terminal
         </p>
       </div>
-    </header>
+    </aside>
   );
 }
 
 /** Cycles the headline disciplines. Replaces the old typewriter effect. */
 function RotatingRole() {
   const [i, setI] = useState(0);
-  const reduced = useReducedMotion();
+  const reduced = useReducedMotionSafe();
 
   useEffect(() => {
     if (reduced) return;

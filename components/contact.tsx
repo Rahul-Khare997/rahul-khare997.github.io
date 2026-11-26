@@ -1,6 +1,7 @@
 'use client';
 
-import { motion, useReducedMotion } from 'motion/react';
+import { motion } from 'motion/react';
+import { useReducedMotionSafe } from './ui-mode';
 import { useState } from 'react';
 import { languages, profile } from '@/lib/content';
 
@@ -16,7 +17,7 @@ const ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? '';
 
 export function ContactForm() {
   const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
-  const reduced = useReducedMotion();
+  const reduced = useReducedMotionSafe();
 
   if (!ENDPOINT) return null;
 

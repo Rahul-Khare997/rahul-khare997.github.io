@@ -1,9 +1,9 @@
 'use client';
 
-import { motion, useReducedMotion } from 'motion/react';
+import { motion } from 'motion/react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { profile } from '@/lib/content';
-import { toggleTheme } from './ui-mode';
+import { toggleTheme, useReducedMotionSafe } from './ui-mode';
 
 type Line = { html: string };
 
@@ -61,7 +61,7 @@ export function Terminal() {
   const [value, setValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
-  const reduced = useReducedMotion();
+  const reduced = useReducedMotionSafe();
 
   const print = useCallback((html: string) => setLines((l) => [...l, { html }]), []);
 

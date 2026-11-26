@@ -53,7 +53,7 @@ export function SkillsTabs() {
               id={`tab-skills-${p.id}`}
               role="tab"
               aria-selected={on}
-              aria-controls={`panel-skills-${p.id}`}
+              aria-controls={on ? `panel-skills-${p.id}` : undefined}
               tabIndex={on ? 0 : -1}
               onClick={() => setActive(p.id)}
               className={[

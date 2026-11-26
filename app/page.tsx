@@ -186,8 +186,8 @@ export default function Home() {
             <Section id="education" label="Education & Certifications" num="06" eyebrow="Academics">
               <ol className="mb-10">
                 {education.map((e) => (
-                  <Reveal key={e.degree}>
-                    <li className="mb-6 grid gap-1 sm:grid-cols-8 sm:gap-6">
+                  <li key={e.degree} className="mb-6">
+                    <Reveal className="grid gap-1 sm:grid-cols-8 sm:gap-6">
                       <p className="font-mono text-[11px] uppercase tracking-wider text-accent sm:col-span-3">
                         {e.year}
                       </p>
@@ -199,8 +199,8 @@ export default function Home() {
                           {e.school} · {e.note}
                         </p>
                       </div>
-                    </li>
-                  </Reveal>
+                    </Reveal>
+                  </li>
                 ))}
               </ol>
 
