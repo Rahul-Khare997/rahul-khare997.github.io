@@ -1,6 +1,7 @@
 'use client';
 
 import { useSyncExternalStore } from 'react';
+import { useReducedMotion } from 'motion/react';
 
 /**
  * Theme and recruiter mode live as classes on <html>, set pre-paint by the
@@ -74,4 +75,14 @@ export function toggleRecruiter() {
 export function useUiMode() {
   const state = useSyncExternalStore(subscribe, getSnapshot, () => SERVER_SNAPSHOT);
   return { ...state, toggleTheme, toggleRecruiter };
+}
+
+/**
+ * True when motion should stop: the OS asks for reduced motion, or recruiter
+ * mode is on. Every animated component checks this one flag.
+ */
+export function useCalm() {
+  const { recruiter } = useUiMode();
+  const reduced = useReducedMotion();
+  return recruiter || !!reduced;
 }

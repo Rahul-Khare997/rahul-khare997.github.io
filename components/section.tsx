@@ -31,7 +31,7 @@ export function Section({
             {eyebrow}
           </div>
         )}
-        <h2 className="font-mono text-sm font-bold uppercase tracking-widest text-heading lg:font-serif lg:text-3xl lg:normal-case lg:tracking-tight">
+        <h2 className="font-mono text-sm font-bold uppercase tracking-widest text-heading lg:font-serif lg:text-3xl lg:font-normal lg:normal-case lg:tracking-tight">
           {label}
         </h2>
       </div>

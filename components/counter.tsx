@@ -31,7 +31,11 @@ export function Counter({
   useEffect(() => {
     const el = ref.current;
     if (!el || target === undefined) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      document.documentElement.classList.contains('recruiter')
+    )
+      return;
 
     let raf = 0;
     let safety = 0;

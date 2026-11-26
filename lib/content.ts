@@ -56,6 +56,12 @@ export const about = [
   'Relocated from Canada to India in 2025. Four Canadian Securities Institute designations. CIRO-registered Investment Representative at TD from Oct 2021 to Feb 2025.',
 ];
 
+export type MetricViz =
+  | { kind: 'arc'; pct: number }
+  | { kind: 'growth'; rows: { label: string; from: number; to: number }[] }
+  | { kind: 'compare'; unit: string; before: number; afterLo: number; afterHi: number }
+  | { kind: 'range'; lo: number; hi: number; max: number };
+
 export type Metric = {
   value: string;
   target?: number;
@@ -64,64 +70,80 @@ export type Metric = {
   label: string;
   detail: string;
   feature?: boolean;
+  /** 'wide' spans 4 of 6 bento columns (2 of 2 on tablet). */
+  span?: 'wide';
+  viz?: MetricViz;
 };
 
+/** Order is the bento layout: wide + narrow pairs, then a row of three. */
 export const metrics: Metric[] = [
   {
-    value: '30+ / 8+ / 80+',
-    label: 'Doctors / clinics & hospitals / patients in beta',
-    detail: 'Zenquip · grown from 5 doctors and 20 patients',
+    value: '30+ / 80+',
+    label: 'Doctors and patients in the private beta',
+    detail: 'Zenquip · also 8+ clinics and hospitals',
     feature: true,
-  },
-  {
-    value: '2',
-    target: 2,
-    label: 'Products running the ICD-11 questionnaire',
-    detail: 'Zenquip · Nurture and Zendoc, built on the WHO framework with fine-tuned open LLMs',
-    feature: true,
-  },
-  {
-    value: 'Rs 70K',
-    label: 'Nurture revenue, first 30 days',
-    detail: 'Zenquip · about 2,500 website visitors; WhatsApp, Razorpay and AWS SES/SNS integrations',
-  },
-  {
-    value: 'Rs 10 Cr',
-    label: 'Committed funding allocation plan',
-    detail: 'Zenquip · prepared with the finance manager; funding committed, not yet received',
-  },
-  {
-    value: '10-20%',
-    label: 'Monthly AWS cost cut',
-    detail: 'Zenquip · about USD 2,000 a month down to USD 1,600 to 1,800',
+    span: 'wide',
+    viz: {
+      kind: 'growth',
+      rows: [
+        { label: 'Doctors', from: 5, to: 30 },
+        { label: 'Patients', from: 20, to: 80 },
+      ],
+    },
   },
   {
     value: '60%',
     target: 60,
     suffix: '%',
     label: 'Demo-to-beta retention',
-    detail: 'Zenquip · about 60% of 40+ product-demo participants stayed on as beta users',
+    detail: 'Zenquip · of 40+ product-demo participants',
+    viz: { kind: 'arc', pct: 60 },
+  },
+  {
+    value: '2',
+    target: 2,
+    label: 'Products running the ICD-11 questionnaire',
+    detail: 'Zenquip · Nurture and Zendoc, on fine-tuned open LLMs',
+  },
+  {
+    value: '10-20%',
+    label: 'Monthly AWS cost cut',
+    detail: 'Zenquip · about USD 2,000 a month down to USD 1,600 to 1,800',
+    feature: true,
+    span: 'wide',
+    viz: { kind: 'compare', unit: 'USD / month', before: 2000, afterLo: 1600, afterHi: 1800 },
   },
   {
     value: '500-750',
     label: 'Team hours saved a year',
     detail: 'TD · estimated, from 6+ MIS and KPI dashboards',
     feature: true,
-  },
-  {
-    value: '60+',
-    target: 60,
-    suffix: '+',
-    label: 'Data sources consolidated',
-    detail: 'TD · files, SharePoint lists and Tableau extracts pulled into role-based reports',
+    span: 'wide',
+    viz: { kind: 'range', lo: 500, hi: 750, max: 1000 },
   },
   {
     value: '60+',
     target: 60,
     suffix: '+',
     label: 'Representatives trained on T+1',
-    detail: 'TD · designed and delivered the training before the May 2024 changeover',
-    feature: true,
+    detail: 'TD · designed and delivered before the May 2024 changeover',
+  },
+  {
+    value: 'Rs 10 Cr',
+    label: 'Committed funding allocation plan',
+    detail: 'Zenquip · prepared with the finance manager; committed, not yet received',
+  },
+  {
+    value: 'Rs 70K',
+    label: 'Nurture revenue, first 30 days',
+    detail: 'Zenquip · about 2,500 website visitors',
+  },
+  {
+    value: '60+',
+    target: 60,
+    suffix: '+',
+    label: 'Data sources consolidated',
+    detail: 'TD · files, SharePoint lists and Tableau extracts in role-based reports',
   },
 ];
 

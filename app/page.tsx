@@ -3,8 +3,9 @@ import { Section } from '@/components/section';
 import { Spotlight } from '@/components/spotlight';
 import { Reveal } from '@/components/reveal';
 import { Counter } from '@/components/counter';
+import { MetricViz } from '@/components/metric-viz';
 import { Rich } from '@/components/rich';
-import { Preloader } from '@/components/preloader';
+import { MotionGate } from '@/components/motion-gate';
 import { Terminal } from '@/components/terminal';
 import { AiChat } from '@/components/ai-chat';
 import { ExperienceTabs } from '@/components/experience-tabs';
@@ -32,8 +33,7 @@ import {
 
 export default function Home() {
   return (
-    <>
-      <Preloader />
+    <MotionGate>
       <ScrollProgress />
       <Spotlight />
       <Terminal />
@@ -70,7 +70,7 @@ export default function Home() {
           <main id="content" className="pt-14 lg:w-[62%] lg:py-20">
             {/* ABOUT */}
             <Section id="about" label="Profile" num="01" eyebrow="Who I am">
-              <div className="space-y-4 leading-relaxed">
+              <div className="max-w-[62ch] space-y-4 leading-relaxed">
                 {about.map((p, i) => (
                   <Reveal key={i} delay={i * 60}>
                     <p>
@@ -99,25 +99,39 @@ export default function Home() {
 
             {/* METRICS */}
             <Section id="impact" label="Key Metrics" num="02" eyebrow="By the numbers">
-              <div className="grid grid-cols-1 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2 lg:grid-cols-6">
                 {metrics.map((m, i) => (
-                  <Reveal key={m.label} delay={i * 40}>
+                  <Reveal
+                    key={m.label}
+                    delay={i * 45}
+                    className={m.span === 'wide' ? 'sm:col-span-2 lg:col-span-4' : 'lg:col-span-2'}
+                  >
                     <div
                       className={[
-                        'h-full p-5 transition-colors duration-200 hover:bg-surface-2',
+                        'flex h-full flex-col p-5 transition-colors duration-200 hover:bg-surface-2',
                         m.feature ? 'bg-surface' : 'bg-background',
                       ].join(' ')}
                     >
-                      <div className="font-mono text-2xl font-bold text-accent">
-                        <Counter
-                          value={m.value}
-                          target={m.target}
-                          prefix={m.prefix}
-                          suffix={m.suffix}
-                        />
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <div className="font-mono text-[clamp(1.6rem,2.6vw,2.2rem)] font-bold leading-none tabular-nums text-accent">
+                            <Counter
+                              value={m.value}
+                              target={m.target}
+                              prefix={m.prefix}
+                              suffix={m.suffix}
+                            />
+                          </div>
+                          <div className="mt-2 text-sm font-semibold text-heading">{m.label}</div>
+                        </div>
+                        {m.viz?.kind === 'arc' && <MetricViz viz={m.viz} />}
                       </div>
-                      <div className="mt-1 text-sm font-semibold text-heading">{m.label}</div>
-                      <div className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                      {m.viz && m.viz.kind !== 'arc' && (
+                        <div className="mt-4">
+                          <MetricViz viz={m.viz} />
+                        </div>
+                      )}
+                      <div className="mt-auto pt-3 text-xs leading-relaxed text-muted-foreground">
                         {m.detail}
                       </div>
                     </div>
@@ -227,8 +241,8 @@ export default function Home() {
             {/* CONTACT */}
             <Section id="contact" label="Let’s Connect" num="07" eyebrow="Contact">
               <p className="mb-6 leading-relaxed">
-                Open to program management, business and finance operations, KPI reporting, and
-                process improvement roles across India.{' '}
+                Open to AI implementation, business analyst, BI and MIS analyst, digital health
+                product and product operations roles across India.{' '}
                 <strong className="font-semibold text-accent-light">Notice period: 2 weeks.</strong>
               </p>
 
@@ -314,6 +328,6 @@ export default function Home() {
       <AiChat />
       <BackToTop />
       <RecruiterBar />
-    </>
+    </MotionGate>
   );
 }

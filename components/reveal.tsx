@@ -1,10 +1,13 @@
 'use client';
 
-import { useEffect, useRef, type ReactNode } from 'react';
+import { motion } from 'motion/react';
+import type { ReactNode } from 'react';
+import { useCalm } from './ui-mode';
 
 /**
- * Fade-and-lift on first scroll into view. One IntersectionObserver per
- * element, disconnected after firing — nothing runs after the reveal.
+ * Short fade-and-lift on first view. Fires while the element is still 15%
+ * below the fold, so content is already settled when it scrolls in and fast
+ * scrolling never shows a blank section. Calm mode renders it in place.
  */
 export function Reveal({
   children,
@@ -15,38 +18,17 @@ export function Reveal({
   delay?: number;
   className?: string;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      el.dataset.visible = 'true';
-      return;
-    }
-
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.dataset.visible = 'true';
-          io.disconnect();
-        }
-      },
-      { rootMargin: '0px 0px -10% 0px' },
-    );
-
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
+  const calm = useCalm();
   return (
-    <div
-      ref={ref}
-      className={`reveal ${className}`}
-      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
+    <motion.div
+      data-motion
+      className={className}
+      initial={calm ? false : { opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '0px 0px 15% 0px' }}
+      transition={{ duration: 0.28, delay: delay / 1000, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

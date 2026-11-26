@@ -70,7 +70,7 @@ export function Sidebar() {
 
         <h1
           style={stagger(1).style}
-          className="hero-reveal font-serif text-4xl font-bold leading-none tracking-tight text-heading sm:text-5xl"
+          className="hero-reveal font-serif text-4xl font-normal leading-none tracking-tight text-heading sm:text-5xl"
         >
           <em className="not-italic text-accent">Rahul</em> Khare
         </h1>
