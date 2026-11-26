@@ -73,7 +73,7 @@ export function Masthead() {
           {profile.role}
         </motion.div>
 
-        <motion.div {...rise(1)} data-motion className="relative mt-6 flex items-center gap-5 md:gap-8">
+        <motion.div {...rise(1)} data-motion className="relative mt-6 flex items-center gap-4 md:gap-5">
           {/* Portrait: flies to the sidebar with the name. The box keeps its size. */}
           <div
             role="img"
