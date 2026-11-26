@@ -297,7 +297,7 @@ export function AiChat() {
           className="fixed bottom-20 right-6 z-40 flex max-h-[70vh] w-[min(24rem,calc(100vw-3rem))] flex-col overflow-hidden rounded-xl border border-border-bright bg-surface shadow-2xl no-print"
         >
           {/* Header */}
-          <div className="flex items-center gap-3 border-b border-border bg-gradient-to-r from-accent-muted to-transparent px-4 py-3">
+          <div className="flex shrink-0 items-center gap-3 border-b border-border bg-gradient-to-r from-accent-muted to-transparent px-4 py-3">
             <div className="relative">
               <Avatar size={34} />
               <span
@@ -371,7 +371,7 @@ export function AiChat() {
 
           {/* Suggestion chips — retire once asked. */}
           {chips.length > 0 && !busy && (
-            <div className="scroll-fade-x no-scrollbar flex gap-1.5 overflow-x-auto px-4 pb-2">
+            <div className="scroll-fade-x no-scrollbar flex shrink-0 items-center gap-1.5 overflow-x-auto px-4 py-1.5">
               {chips.map((c) => (
                 <button
                   key={c.label}
@@ -391,7 +391,7 @@ export function AiChat() {
               e.preventDefault();
               send(value);
             }}
-            className="flex items-center gap-2 border-t border-border p-3"
+            className="flex shrink-0 items-center gap-2 border-t border-border p-3"
           >
             <input
               ref={inputRef}
