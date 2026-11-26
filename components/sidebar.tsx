@@ -110,10 +110,10 @@ export function Sidebar() {
                   <a className="group flex items-center py-2" href={`#${item.id}`}>
                     <span
                       className={[
-                        'mr-4 h-px transition-all duration-200 motion-reduce:transition-none',
+                        'mr-4 h-px w-16 origin-left transition-[transform,background-color] duration-200 motion-reduce:transition-none',
                         on
-                          ? 'w-16 bg-accent'
-                          : 'w-8 bg-muted-foreground group-hover:w-16 group-hover:bg-heading',
+                          ? 'scale-x-100 bg-accent'
+                          : 'scale-x-50 bg-muted-foreground group-hover:scale-x-100 group-hover:bg-heading',
                       ].join(' ')}
                     />
                     <span
@@ -137,7 +137,7 @@ export function Sidebar() {
           <a
             href={profile.resume}
             download
-            className="inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground transition-opacity duration-200 hover:opacity-90"
+            className="inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground transition-[opacity,transform] duration-200 hover:-translate-y-0.5 hover:opacity-90 active:scale-[0.97]"
           >
             ↓ Résumé
           </a>

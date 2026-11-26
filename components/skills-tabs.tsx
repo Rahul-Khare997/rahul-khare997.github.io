@@ -1,6 +1,7 @@
 'use client';
 
-import { motion, useReducedMotion } from 'motion/react';
+import { motion } from 'motion/react';
+import { useCalm } from './ui-mode';
 import { useRef, useState } from 'react';
 import { skillPanels } from '@/lib/content';
 import { Rich } from './rich';
@@ -13,7 +14,7 @@ import { Rich } from './rich';
  */
 export function SkillsTabs() {
   const [active, setActive] = useState(skillPanels[0].id);
-  const reduced = useReducedMotion();
+  const reduced = useCalm();
   const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const panel = skillPanels.find((p) => p.id === active) ?? skillPanels[0];
 
@@ -57,9 +58,19 @@ export function SkillsTabs() {
               onClick={() => setActive(p.id)}
               className={[
                 'relative shrink-0 rounded-md px-3 py-2.5 text-left transition-colors duration-200 lg:w-full',
-                on ? 'bg-accent-muted text-heading' : 'text-muted-foreground hover:text-heading',
+                on ? 'text-heading' : 'text-muted-foreground hover:text-heading',
               ].join(' ')}
             >
+              {on && (
+                <motion.span
+                  layoutId="skill-bg"
+                  aria-hidden
+                  className="absolute inset-0 rounded-md bg-accent-muted"
+                  transition={
+                    reduced ? { duration: 0 } : { type: 'spring', stiffness: 420, damping: 34 }
+                  }
+                />
+              )}
               {on && (
                 <motion.span
                   layoutId="skill-rail"
@@ -71,10 +82,10 @@ export function SkillsTabs() {
                   }
                 />
               )}
-              <span className="block whitespace-nowrap text-[13px] font-semibold lg:whitespace-normal">
+              <span className="relative block whitespace-nowrap text-[13px] font-semibold lg:whitespace-normal">
                 {p.name}
               </span>
-              <span className="hidden text-[11px] text-muted-foreground lg:block">{p.desc}</span>
+              <span className="relative hidden text-[11px] text-muted-foreground lg:block">{p.desc}</span>
             </button>
           );
         })}
@@ -101,22 +112,40 @@ export function SkillsTabs() {
             </li>
           ))}
         </ul>
-        <ul className="mt-5 flex flex-wrap gap-1.5">
-          {panel.chips.map((c) => (
-            <li key={c.label}>
-              <span
-                className={[
-                  'inline-block rounded border px-2.5 py-1 font-mono text-[11px]',
-                  c.hi
-                    ? 'border-border-bright bg-accent-muted text-accent-light'
-                    : 'border-border text-muted-foreground',
-                ].join(' ')}
-              >
-                {c.label}
+        {[
+          { name: 'Core', chips: panel.chips.filter((c) => c.hi) },
+          { name: 'Also', chips: panel.chips.filter((c) => !c.hi) },
+        ]
+          .filter((g) => g.chips.length)
+          .map((g, gi) => (
+            <div key={g.name} className="mt-5 grid grid-cols-[3rem_1fr] items-start gap-3">
+              <span className="pt-1.5 font-mono text-[9px] uppercase tracking-widest text-muted-foreground">
+                {g.name}
               </span>
-            </li>
+              <ul className="flex flex-wrap gap-1.5">
+                {g.chips.map((c, i) => (
+                  <motion.li
+                    key={c.label}
+                    data-motion
+                    initial={reduced ? false : { opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: reduced ? 0 : 0.2, delay: reduced ? 0 : 0.08 + gi * 0.08 + i * 0.025 }}
+                  >
+                    <span
+                      className={[
+                        'inline-block rounded border px-2.5 py-1 font-mono text-[11px]',
+                        c.hi
+                          ? 'border-border-bright bg-accent-muted text-accent-light'
+                          : 'border-border text-muted-foreground',
+                      ].join(' ')}
+                    >
+                      {c.label}
+                    </span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
       </motion.div>
     </div>
   );

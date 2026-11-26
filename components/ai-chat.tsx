@@ -235,7 +235,7 @@ export function AiChat() {
           initial={reduced ? false : { opacity: 0, y: 8, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: reduced ? 0 : 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed bottom-[4.6rem] right-6 z-40 w-64 rounded-lg rounded-br-sm border border-border-bright bg-surface p-3 shadow-2xl no-print"
+          className="fixed bottom-[4.6rem] right-6 z-40 hidden w-64 rounded-lg lg:block rounded-br-sm border border-border-bright bg-surface p-3 shadow-2xl no-print"
         >
           <button
             type="button"
@@ -275,7 +275,7 @@ export function AiChat() {
         }}
         aria-expanded={open}
         aria-label={open ? 'Close AI chat' : 'Open AI chat to ask about Rahul'}
-        className="group fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2.5 text-sm font-semibold text-accent-foreground shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl no-print"
+        className="group fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2.5 text-sm font-semibold text-accent-foreground shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.97] no-print"
       >
         {/* Finite attention ring — a few pulses, then rest. */}
         <span aria-hidden className="chat-ping absolute inset-0 rounded-full bg-accent/60" />

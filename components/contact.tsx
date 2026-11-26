@@ -124,7 +124,16 @@ export function CopyEmail() {
       onClick={copy}
       className="rounded border border-border px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-muted-foreground transition-colors hover:text-accent no-print"
     >
-      {copied ? 'copied' : 'copy'}
+      <motion.span
+        key={copied ? 'copied' : 'copy'}
+        data-motion
+        initial={{ opacity: 0, y: 4 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.18 }}
+        className={`inline-block ${copied ? 'text-accent' : ''}`}
+      >
+        {copied ? '✓ copied' : 'copy'}
+      </motion.span>
     </button>
   );
 }

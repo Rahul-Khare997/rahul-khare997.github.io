@@ -465,17 +465,30 @@ export const skillPanels: SkillPanel[] = [
   },
 ];
 
+export type ProjectTag = 'ai' | 'ba' | 'bi';
+
+export const projectFilters: { id: 'all' | ProjectTag; label: string }[] = [
+  { id: 'all', label: 'All' },
+  { id: 'ai', label: 'AI & LLM' },
+  { id: 'ba', label: 'Business Analysis' },
+  { id: 'bi', label: 'BI & Ops' },
+];
+
 export type Project = {
   num: string;
   title: string;
   org: string;
   description: string;
   impact: string;
+  tags: ProjectTag[];
+  diagram?: 'icd' | 'emr';
 };
 
 export const projects: Project[] = [
   {
     num: '01',
+    tags: ['ai'],
+    diagram: 'icd',
     title: 'ICD-11 Questionnaire on Fine-Tuned LLMs',
     org: 'Zenquip Healthcare · 2026',
     description:
@@ -484,6 +497,8 @@ export const projects: Project[] = [
   },
   {
     num: '02',
+    tags: ['ai', 'ba'],
+    diagram: 'emr',
     title: 'EMR Module & Hospital Integration',
     org: 'Zenquip Healthcare · 2026',
     description:
@@ -492,6 +507,7 @@ export const projects: Project[] = [
   },
   {
     num: '03',
+    tags: ['ai', 'bi'],
     title: 'Nurture Launch',
     org: 'Zenquip Healthcare · 2026',
     description:
@@ -500,6 +516,7 @@ export const projects: Project[] = [
   },
   {
     num: '04',
+    tags: ['ai', 'bi'],
     title: 'AI-Automated Leadership Reporting',
     org: 'Zenquip Healthcare · 2026',
     description:
@@ -508,6 +525,7 @@ export const projects: Project[] = [
   },
   {
     num: '05',
+    tags: ['ba'],
     title: 'Zenquip Private Beta',
     org: 'Zenquip Healthcare · 2026',
     description:
@@ -516,6 +534,7 @@ export const projects: Project[] = [
   },
   {
     num: '06',
+    tags: ['bi'],
     title: 'MIS & KPI Dashboard Suite',
     org: 'TD Bank Group',
     description:
@@ -524,6 +543,7 @@ export const projects: Project[] = [
   },
   {
     num: '07',
+    tags: ['bi'],
     title: 'T+1 Settlement Training',
     org: 'TD Bank Group · 2024',
     description:
@@ -532,6 +552,7 @@ export const projects: Project[] = [
   },
   {
     num: '08',
+    tags: ['ba'],
     title: 'Active Trader Platform Migration',
     org: 'TD Bank Group',
     description:
@@ -540,6 +561,7 @@ export const projects: Project[] = [
   },
   {
     num: '09',
+    tags: ['ba', 'ai'],
     title: 'AI-Based Underwriting Capstone',
     org: 'Seneca College · 2020',
     description:
@@ -548,6 +570,7 @@ export const projects: Project[] = [
   },
   {
     num: '10',
+    tags: ['ai'],
     title: 'Portfolio Website, AI-Assisted Build',
     org: 'Personal project',
     description:

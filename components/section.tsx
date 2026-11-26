@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { GhostNum, SectionRule } from './ghost-num';
 
 /**
  * Section wrapper: a sticky frosted label on mobile (the one place
@@ -20,9 +21,7 @@ export function Section({
 }) {
   return (
     <section id={id} className="relative mb-20 scroll-mt-16 lg:mb-28" aria-label={label}>
-      <span className="ghost-num hidden lg:block" aria-hidden>
-        {num}
-      </span>
+      <GhostNum num={num} />
 
       {/* Mobile: sticky frosted label. Desktop: a normal heading. */}
       <div className="sticky top-0 z-20 -mx-6 mb-6 w-screen border-b border-border bg-glass px-6 py-4 backdrop-blur-md lg:relative lg:top-auto lg:mx-0 lg:w-full lg:border-0 lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none">
@@ -34,6 +33,7 @@ export function Section({
         <h2 className="font-mono text-sm font-bold uppercase tracking-widest text-heading lg:font-serif lg:text-3xl lg:font-normal lg:normal-case lg:tracking-tight">
           {label}
         </h2>
+        <SectionRule />
       </div>
 
       <div className="relative z-10">{children}</div>

@@ -11,6 +11,7 @@ import { AiChat } from '@/components/ai-chat';
 import { ExperienceTabs } from '@/components/experience-tabs';
 import { Logo } from '@/components/logo';
 import { SkillsTabs } from '@/components/skills-tabs';
+import { ProjectsGrid } from '@/components/projects-grid';
 import { Availability, ContactForm, CopyEmail } from '@/components/contact';
 import {
   BackToTop,
@@ -28,7 +29,6 @@ import {
   experience,
   metrics,
   profile,
-  projects,
 } from '@/lib/content';
 
 export default function Home() {
@@ -177,25 +177,7 @@ export default function Home() {
 
             {/* PROJECTS */}
             <Section id="projects" label="Key Projects" num="05" eyebrow="Impact">
-              <ol className="group/list grid gap-4 sm:grid-cols-2">
-                {projects.map((p) => (
-                  <li key={p.num}>
-                    <div className="group relative h-full rounded-md border border-border bg-surface/40 p-5 transition-all duration-200 hover:border-border-bright lg:hover:opacity-100! lg:group-hover/list:opacity-60">
-                      <div className="font-mono text-[11px] text-accent/50">{p.num}</div>
-                      <h3 className="mt-2 text-sm font-semibold leading-snug text-heading">
-                        {p.title}
-                      </h3>
-                      <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-                        {p.org}
-                      </p>
-                      <p className="mt-3 text-xs leading-relaxed">{p.description}</p>
-                      <p className="mt-3 border-t border-border pt-3 font-mono text-[11px] text-accent-light">
-                        {p.impact}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
+              <ProjectsGrid />
             </Section>
 
             {/* EDUCATION */}
