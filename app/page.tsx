@@ -207,7 +207,7 @@ export default function Home() {
               </ol>
 
               <div className="mb-3 font-mono text-[10px] uppercase tracking-widest text-accent">
-                Industry certifications
+                Certifications &amp; courses
               </div>
               <p className="mb-4 text-xs leading-relaxed text-muted-foreground">
                 {certifications.note}

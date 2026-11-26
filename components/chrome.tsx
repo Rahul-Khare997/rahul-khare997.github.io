@@ -118,7 +118,7 @@ export function RecruiterBar() {
     <div className="fixed inset-x-0 bottom-0 z-40 flex flex-wrap items-center justify-between gap-3 border-t border-border-bright bg-surface px-5 py-3 no-print">
       <p className="text-xs text-foreground">
         <strong className="text-heading">Recruiter Mode.</strong> Clean, animation-free view ·
-        Program Manager at Zenquip Healthcare · Ex-TD Bank Canada · Notice period: 2 weeks.
+        Product &amp; Operations Lead at Zenquip Healthcare · Ex-TD Direct Investing · Notice period: 2 weeks.
       </p>
       <a
         href={profile.resume}

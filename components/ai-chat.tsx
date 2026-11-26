@@ -17,12 +17,12 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 const PROXY = process.env.NEXT_PUBLIC_AI_PROXY_URL ?? '';
 
 const GREETING =
-  "Hi — I'm Rahul's AI assistant, answering from his résumé. Ask about his program delivery, budget and burn control, KPI reporting, TD Bank years, or availability.";
+  "Hi, I'm Rahul's AI assistant, answering from his résumé. Ask about his AI and LLM work, EMR pilot, business analysis, dashboards, TD years, or availability.";
 
 const CHIPS = [
-  { label: 'Program mgr fit?', q: 'Is Rahul a good fit for a Program Manager role?' },
+  { label: 'AI work', q: 'What AI and LLM work has Rahul done at Zenquip?' },
   { label: 'Zenquip role', q: 'What does Rahul do at Zenquip Healthcare?' },
-  { label: 'Finance ops', q: 'What budget and finance operations experience does Rahul have?' },
+  { label: 'BA fit?', q: 'Is Rahul a good fit for a Business Analyst role?' },
   { label: 'Availability', q: "What is Rahul's notice period and where is he based?" },
   { label: 'TD Bank', q: "Tell me about Rahul's TD Bank experience" },
   { label: 'KPI dashboards', q: 'What KPI dashboards and reporting has Rahul built?' },
@@ -260,7 +260,7 @@ export function AiChat() {
               </span>
             </span>
             <span className="mt-1.5 block text-[13px] leading-snug text-heading">
-              Hiring? Ask me anything about Rahul&rsquo;s experience — I answer from his résumé.
+              Hiring? Ask me anything about Rahul&rsquo;s experience. I answer from his résumé.
             </span>
           </button>
         </motion.div>
@@ -274,7 +274,7 @@ export function AiChat() {
           setOpen((o) => !o);
         }}
         aria-expanded={open}
-        aria-label={open ? 'Close AI chat' : 'Open AI chat — ask about Rahul'}
+        aria-label={open ? 'Close AI chat' : 'Open AI chat to ask about Rahul'}
         className="group fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2.5 text-sm font-semibold text-accent-foreground shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl no-print"
       >
         {/* Finite attention ring — a few pulses, then rest. */}

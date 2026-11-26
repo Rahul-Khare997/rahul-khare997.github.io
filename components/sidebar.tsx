@@ -54,7 +54,7 @@ export function Sidebar() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={profile.photo}
-              alt={`${profile.name} — Program Manager`}
+              alt={`${profile.name}, Product & Operations Lead`}
               width={96}
               height={96}
               className="h-24 w-24 rounded-full object-cover object-top"

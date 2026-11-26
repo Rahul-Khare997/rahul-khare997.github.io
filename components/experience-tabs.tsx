@@ -65,7 +65,7 @@ export function ExperienceTabs({ role }: { role: Role }) {
       {/* Track tabs */}
       <div
         role="tablist"
-        aria-label={`${role.company} — areas of work`}
+        aria-label={`${role.company}: areas of work`}
         onKeyDown={onKeyDown}
         className="scroll-fade-x no-scrollbar -mx-1 flex gap-1 overflow-x-auto border-b border-border px-1"
       >

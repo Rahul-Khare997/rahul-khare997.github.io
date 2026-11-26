@@ -9,47 +9,48 @@ type Line = { html: string };
 
 const HELP = [
   '<b>Available commands</b>',
-  '  <b>skills</b>      — core competencies &amp; tooling',
-  '  <b>experience</b>  — roles &amp; tenure',
-  '  <b>certs</b>       — certifications',
-  '  <b>contact</b>     — how to reach Rahul',
-  '  <b>resume</b>      — download the PDF',
-  '  <b>theme</b>       — toggle light / dark',
-  '  <b>clear</b>       — clear the screen',
-  '  <b>exit</b>        — close the terminal  <i>(or press ` / Esc)</i>',
+  '  <b>skills</b>      - core competencies &amp; tooling',
+  '  <b>experience</b>  - roles &amp; tenure',
+  '  <b>certs</b>       - certifications',
+  '  <b>contact</b>     - how to reach Rahul',
+  '  <b>resume</b>      - download the PDF',
+  '  <b>theme</b>       - toggle light / dark',
+  '  <b>clear</b>       - clear the screen',
+  '  <b>exit</b>        - close the terminal  <i>(or press ` / Esc)</i>',
 ].join('\n');
 
 const TEXT: Record<string, string> = {
   help: HELP,
   skills: [
-    'Program &amp; Delivery         <i>Roadmaps · PRDs · sprints · Jira / Confluence</i>',
-    'Business &amp; Finance Ops     <i>Budget allocation · burn control · investor reporting</i>',
-    'KPI Reporting &amp; Dashboards <i>Excel VBA · Power Query · Power BI</i>',
-    'Process Improvement        <i>RCA · workflow design · SLA mgmt · UAT</i>',
-    'Capital Markets Operations <i>Trade lifecycle · T+1 settlement · reconciliation</i>',
-    'KYC / AML / Compliance     <i>CDD/EDD · PEP · OFAC/UN/CSA · DPDPA / GDPR</i>',
-    'Cloud &amp; AI                 <i>AWS · TD-GPT · n8n · Power Automate · MCP</i>',
+    'AI &amp; LLMs                  <i>Fine-tuning · guardrails · Claude Code · MCP · agentic workflows</i>',
+    'Business Analysis          <i>Requirements · user stories · UAT · EMR integration</i>',
+    'BI &amp; Dashboards            <i>Power BI · Excel VBA · Power Query · KPI reporting</i>',
+    'Product &amp; Delivery         <i>Scrum · PRDs · roadmaps · Jira / Confluence</i>',
+    'Platform &amp; Integrations    <i>AWS · WhatsApp · Razorpay · SES/SNS</i>',
+    'Brokerage Operations       <i>Order execution · reconciliation · T+1 settlement</i>',
+    'KYC / AML &amp; Privacy        <i>CDD/EDD · PEP · sanctions screening · DPDP Act / GDPR</i>',
   ].join('\n'),
   experience: [
-    '<b>Zenquip Healthcare Pvt. Ltd.</b>  <i>Nov 2025 – Present · Gurugram</i>',
-    '  Program Manager · Business &amp; Finance Operations, Product Programs &amp; Analytics',
-    '<b>TD Bank Group — TD Direct Investing</b>  <i>Oct 2021 – Feb 2025 · 3.5 yrs</i>',
-    '  Registered Investment Representative · CIRO/SEC Registered · Toronto',
-    '<b>The Home Depot Canada</b>  <i>Mar 2019 – Oct 2021</i>',
-    '  Head Cashier · cash ops, budget ownership, SAP invoicing',
-    '<b>ATA Freight India</b>  <i>Jun 2017 – Aug 2017</i>',
-    '  Business Analyst Intern · SAP NetWeaver, revenue recognition',
+    '<b>Zenquip Healthcare Pvt. Ltd.</b>  <i>Nov 2025 - Present · Jaipur, India · Remote</i>',
+    '  Product &amp; Operations Lead · LLM fine-tuning, EMR pilot, delivery',
+    '<b>TD Bank Group (TD Direct Investing)</b>  <i>Oct 2021 - Feb 2025 · 3+ yrs</i>',
+    '  Registered Investment Representative · CIRO-registered at TD · Toronto',
+    '<b>The Home Depot of Canada</b>  <i>Mar 2019 - Oct 2021</i>',
+    '  Head Cashier (part-time) · till reconciliation, SAP invoicing',
+    '<b>ATA Freight India</b>  <i>Jun 2017 - Aug 2017</i>',
+    '  Business Analyst Intern · SAP NetWeaver invoicing, variance reports',
   ].join('\n'),
   certs: [
-    "CSI (Canada's securities licensing body — like SEBI/NISM):",
-    '  <b>CSC</b> · <b>CPH</b> · <b>DFOL</b> · <b>PFSA</b>  <i>all CIRO/SEC registered</i>',
-    '  Anthropic AI Courses · CyberSecurity <i>(LinkedIn Learning)</i>',
+    "CSI (Canada's securities education and examination body; India reference point: NISM):",
+    '  <b>CSC</b> · <b>CPH</b> · <b>DFOL</b> · <b>PFSA</b>',
+    '  CIRO-registered Investment Representative at TD <i>(Oct 2021 - Feb 2025)</i>',
+    '  Anthropic Academy courses <i>(completed 2026)</i>: Claude API · Claude Code in Action · MCP · AI Fluency',
   ].join('\n'),
   contact: [
     `email     <b>${profile.email}</b>`,
     `phone     <b>${profile.phone}</b>`,
     'linkedin  <b>linkedin.com/in/rahulkhare997</b>',
-    'location  <i>Pune, India · notice period 2 weeks · open to Gurugram / Hyderabad / Bengaluru</i>',
+    'location  <i>Greater Noida, Delhi NCR · notice period 2 weeks · open to Gurugram / Pune / Bengaluru</i>',
   ].join('\n'),
 };
 
@@ -84,7 +85,7 @@ export function Terminal() {
   useEffect(() => {
     if (!open) return;
     if (lines.length === 0) {
-      print('<b>RK Terminal v1.0</b> <i>— program &amp; operations portfolio</i>');
+      print('<b>RK Terminal v1.0</b> <i>· AI, BA &amp; BI portfolio</i>');
       print('<i>Type</i> help <i>for commands.</i>');
       print('');
     }
@@ -122,7 +123,7 @@ export function Terminal() {
       print('');
       return;
     }
-    print(`<i>command not found:</i> ${c.replace(/</g, '&lt;')} <i>— try</i> help`);
+    print(`<i>command not found:</i> ${c.replace(/</g, '&lt;')} <i>· try</i> help`);
     print('');
   }
 

@@ -13,9 +13,9 @@ const serif = DM_Serif_Display({
 });
 
 const SITE = 'https://rahul-khare997.github.io';
-const TITLE = `${profile.name} — Program Management | Business & Finance Operations | KPI Reporting`;
+const TITLE = `${profile.name} | AI Implementation | Business Analysis | BI & Dashboards`;
 const DESCRIPTION =
-  'Program Manager at Zenquip Healthcare and ex-TD Bank Canada. Program delivery, business and finance operations, KPI reporting and dashboards, process improvement. Notice period: 2 weeks.';
+  'Product & Operations Lead at Zenquip Healthcare, an AI healthcare platform: LLM fine-tuning, EMR integration pilot, business analysis and dashboards. 3+ years at TD Direct Investing. Greater Noida, Delhi NCR. Notice period: 2 weeks.';
 
 /** OG/Twitter card, favicons and the mark itself all derive from the RK
  *  logo — sources in .logo-sources/, derived files in public/assets/brand/. */
@@ -23,7 +23,7 @@ const OG_IMAGE = {
   url: '/assets/brand/og.png',
   width: 1200,
   height: 630,
-  alt: `${profile.name} — Program Manager, Business & Finance Operations`,
+  alt: `${profile.name}, Product & Operations Lead`,
 };
 
 export const metadata: Metadata = {
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: SITE,
-    siteName: `${profile.name} — Portfolio`,
+    siteName: `${profile.name} | Portfolio`,
     locale: 'en_IN',
     images: [OG_IMAGE],
   },
@@ -63,15 +63,15 @@ const personSchema = {
   '@type': 'Person',
   name: profile.name,
   url: SITE,
-  jobTitle: 'Program Manager — Business & Finance Operations, Product Programs & Analytics',
+  jobTitle: 'Product & Operations Lead',
   description: DESCRIPTION,
   email: `mailto:${profile.email}`,
   telephone: profile.phone,
   worksFor: { '@type': 'Organization', name: 'Zenquip Healthcare Pvt. Ltd.' },
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Pune',
-    addressRegion: 'Maharashtra',
+    addressLocality: 'Greater Noida',
+    addressRegion: 'Uttar Pradesh',
     addressCountry: 'IN',
   },
   alumniOf: [
@@ -80,15 +80,15 @@ const personSchema = {
     { '@type': 'CollegeOrUniversity', name: 'Bharati Vidyapeeth (IMED)' },
   ],
   knowsAbout: [
-    'Program Management',
-    'Business Operations',
-    'Finance Operations',
-    'Budget Planning & Allocation',
-    'KPI Reporting',
-    'Process Improvement',
-    'Jira',
-    'AWS',
+    'LLM Fine-Tuning',
+    'AI Implementation',
+    'EMR Integration',
+    'Business Analysis',
     'Power BI',
+    'KPI Reporting',
+    'Claude Code',
+    'Jira',
+    'KYC/AML',
   ],
   sameAs: [profile.linkedin, profile.github],
 };

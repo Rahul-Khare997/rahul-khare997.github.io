@@ -43,7 +43,7 @@ export function ContactForm() {
         animate={{ opacity: 1, y: 0 }}
         className="rounded-md border border-border-bright bg-accent-muted p-4 text-sm text-accent-light"
       >
-        Thanks — your message is on its way. Rahul will reply to the address you gave.
+        Thanks, your message is on its way. Rahul will reply to the address you gave.
       </motion.p>
     );
   }
@@ -140,7 +140,7 @@ export function Availability() {
         <div>
           <div className="text-sm font-semibold text-heading">{profile.notice}</div>
           <div className="mt-0.5 text-xs text-muted-foreground">
-            Zenquip Healthcare · Ex-TD Bank Canada · CIRO/SEC Registered · Night/rotational shifts OK
+            Product &amp; Operations Lead at Zenquip Healthcare · 3+ years at TD Direct Investing
           </div>
         </div>
       </div>
