@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { nav, profile } from '@/lib/content';
 import { ModeControls } from './chrome';
-import { NAME_FLIGHT, NAME_LAYOUT_ID, NameMark } from './masthead';
+import { NAME_FLIGHT, NAME_LAYOUT_ID, NameMark, PHOTO_LAYOUT_ID, PhotoMark } from './masthead';
 import { useNameDocked } from './name-dock';
 import { useCalm } from './ui-mode';
 
@@ -52,21 +52,17 @@ export function Sidebar() {
           mode controls can never be lost on shorter screens. */}
       <div>
         <div {...stagger(0)} className="hero-reveal mb-6 flex items-center gap-4">
-          <div className="relative shrink-0">
-            <div
-              aria-hidden
-              className="absolute -inset-1 rounded-full border border-border-bright opacity-70"
-            />
-            {/* Static export: no image optimisation server, so a plain <img>. */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={profile.photo}
-              alt={`${profile.name}, Product & Operations Lead`}
-              width={96}
-              height={96}
-              className="h-24 w-24 rounded-full object-cover object-top"
-              style={{ filter: 'grayscale(10%) contrast(1.04)' }}
-            />
+          {/* Desktop only: the portrait arrives here with the name. */}
+          <div aria-hidden className="relative hidden h-24 w-24 shrink-0 lg:block">
+            {docked && (
+              <motion.div
+                layoutId={PHOTO_LAYOUT_ID}
+                transition={calm ? { duration: 0 } : NAME_FLIGHT}
+                className="absolute inset-0"
+              >
+                <PhotoMark />
+              </motion.div>
+            )}
           </div>
           <div className="font-mono text-[10px] uppercase leading-relaxed tracking-[0.2em] text-muted-foreground">
             Zenquip Healthcare

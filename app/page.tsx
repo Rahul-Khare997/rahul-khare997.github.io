@@ -53,8 +53,8 @@ export default function Home() {
         Skip to content
       </a>
 
-      <Masthead />
       <Ticker />
+      <Masthead />
 
       {/* Desktop: theme + recruiter controls pinned top-right, outside the
           sticky sidebar — a short viewport can never hide them there. The

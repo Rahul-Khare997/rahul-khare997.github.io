@@ -8,6 +8,7 @@ import { useCalm } from './ui-mode';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 export const NAME_LAYOUT_ID = 'rk-name';
+export const PHOTO_LAYOUT_ID = 'rk-photo';
 export const NAME_FLIGHT = { type: 'spring', stiffness: 170, damping: 26, mass: 0.9 } as const;
 
 /** The name as one element, so it can fly between masthead and sidebar. */
@@ -15,6 +16,25 @@ export function NameMark({ className }: { className: string }) {
   return (
     <span className={className}>
       Rahul <em className="not-italic text-accent">Khare</em>
+    </span>
+  );
+}
+
+/** Round portrait with its hairline ring; fills its parent box. */
+export function PhotoMark() {
+  return (
+    <span className="relative block h-full w-full">
+      <span aria-hidden className="absolute -inset-1 rounded-full border border-border-bright opacity-70" />
+      {/* Static export: no image optimisation server, so a plain <img>. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={profile.photo}
+        alt=""
+        width={192}
+        height={192}
+        className="h-full w-full rounded-full object-cover object-top"
+        style={{ filter: 'grayscale(10%) contrast(1.04)' }}
+      />
     </span>
   );
 }
@@ -53,7 +73,23 @@ export function Masthead() {
           {profile.role}
         </motion.div>
 
-        <motion.div {...rise(1)} data-motion className="relative mt-6">
+        <motion.div {...rise(1)} data-motion className="relative mt-6 flex items-center gap-5 md:gap-8">
+          {/* Portrait: flies to the sidebar with the name. The box keeps its size. */}
+          <div
+            role="img"
+            aria-label={`${profile.name}, ${profile.role}`}
+            className="relative h-20 w-20 shrink-0 sm:h-28 sm:w-28 lg:h-36 lg:w-36"
+          >
+            {!docked && (
+              <motion.div
+                layoutId={PHOTO_LAYOUT_ID}
+                transition={calm ? { duration: 0 } : NAME_FLIGHT}
+                className="absolute inset-0"
+              >
+                <PhotoMark />
+              </motion.div>
+            )}
+          </div>
           {/* The real heading: always in the accessibility tree, holds the height. */}
           <h1 ref={slot} className={docked ? 'opacity-0' : undefined}>
             {docked ? (
