@@ -64,7 +64,7 @@ export function Masthead() {
   return (
     <header className="relative overflow-hidden border-b border-border">
       <div aria-hidden className="bold-glow pointer-events-none absolute inset-0" />
-      <div className="relative mx-auto max-w-[1560px] px-6 pb-12 pt-16 md:px-12 md:pb-16 md:pt-24 lg:pl-10 lg:pr-12 xl:pl-16 xl:pr-20">
+      <div className="relative mx-auto max-w-[1560px] px-6 pb-8 pt-16 md:px-12 md:pb-10 md:pt-24 lg:pl-10 lg:pr-12 xl:pl-16 xl:pr-20">
         <motion.div
           {...rise(0)}
           data-motion
@@ -73,7 +73,7 @@ export function Masthead() {
           {profile.role}
         </motion.div>
 
-        <motion.div {...rise(1)} data-motion className="relative mt-6 flex items-center gap-4 md:gap-5">
+        <motion.div {...rise(1)} data-motion className="relative mt-6 flex items-center gap-5 md:gap-8">
           {/* Portrait: flies to the sidebar with the name. The box keeps its size. */}
           <div
             role="img"

@@ -45,7 +45,7 @@ export function Sidebar() {
   });
 
   return (
-    <header className="no-scrollbar lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[34%] lg:flex-col lg:justify-between lg:overflow-y-auto lg:pb-8 lg:pt-16">
+    <header className="no-scrollbar lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[34%] lg:flex-col lg:justify-between lg:overflow-y-auto lg:pb-8 lg:pt-10">
       {/* max-h-screen + sticky means anything that doesn't fit the viewport
           is unreachable — it never scrolls into view. Rhythm below is sized
           to fit ~800px-tall laptops; overflow-y-auto is the fallback so the

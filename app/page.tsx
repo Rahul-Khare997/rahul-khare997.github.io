@@ -69,7 +69,7 @@ export default function Home() {
         <div className="lg:flex lg:justify-between lg:gap-8">
           <Sidebar />
 
-          <main id="content" className="pt-14 lg:w-[62%] lg:py-20">
+          <main id="content" className="pt-14 lg:w-[62%] lg:pb-20 lg:pt-12">
             {/* ABOUT */}
             <Section id="about" label="Profile" num="01" eyebrow="Who I am">
               <div className="max-w-[62ch] space-y-4 leading-relaxed">
